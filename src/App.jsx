@@ -1,11 +1,13 @@
 import React from "react";
+import Home from "./Components/Pages/Home";
 
 function App() {
   return (
     <>
-      <h1 className="text-red-700 font-extrabold ">Welcome to Thrifty!</h1>
+      <Home />
     </>
   );
 }
 
 export default App;
+
