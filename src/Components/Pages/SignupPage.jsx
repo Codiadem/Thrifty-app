@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from '../assets/Thrifty-logo.png'
+import logo from '../../assets/Thrifty-logo.png'
+import google from '../../assets/Google.png'
 
 const SignupPage = () => {
   return (
@@ -20,7 +21,7 @@ const SignupPage = () => {
                 {/*container for Form starts here */}
                 <div className='form-container w-1/2 p-9'>
                     <form className='inner-container items-center'>
-                      <h2 className='form-title pb-[3rem] text-3xl text-[#371694] font-bold'> Sign Up</h2>
+                      <h2 className='form-title pb-[3rem] text-3xl text-[#371694] font-bold font-DMSans'> Sign Up</h2>
 
                       <div className='form-group flex items-center justify-center gap-2 py-3'>
                        
@@ -68,7 +69,33 @@ const SignupPage = () => {
                       
                     </form>
               
+                    <div className="flex items-center w-full my-9 font-bold">
+                        <hr className="w-full border-b" />
+                        <p className="px-3 ">OR</p>
+                        <hr className="w-full border-b" />
+                    </div>
 
+                    <button
+                            aria-label="Login with Google"
+                            type="button"
+                            className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
+                        >
+                           
+                           <div>
+									          	  <img src={google} alt="" className=" w-11.2" />
+									        </div>
+
+                            <p>Login with Google</p>
+                        </button>
+
+                          <div className="mt-4 text-grey-600">
+                                       Already have an account?{" "}
+                                <span>
+                                        <a className="text-[#371694] hover:underline" href="#">
+                                          Log in
+                                      </a>
+                                  </span>
+                          </div>
                    </div>
 
             </div>
