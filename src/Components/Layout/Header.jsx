@@ -4,11 +4,11 @@ import logo from "../../images/logo-white-bg.png";
 function Header() {
   return (
     <>
-      <div className="navbar">
+      <div className="navbar flex justify-between items-center p-1.5">
         <img src={logo} alt="logo" />
         <nav>
-          <ul>
-            <li>
+          <ul className="flex justify-between space-x-20">
+            <li className="">
               <a href="#home">Home</a>
             </li>
             <li>
@@ -18,17 +18,17 @@ function Header() {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-          <div className="opt">
-            <ul>
-              <li>
-                <a href="#login">Login</a>
-              </li>
-              <li>
-                <a href="#signup">Sign Up</a>
-              </li>
-            </ul>
-          </div>
         </nav>
+        <div className="opt">
+          <ul className="flex space-x-10 items-center">
+            <li>
+              <a href="#login">Login</a>
+            </li>
+            <li className="border-2 border-primaryBlue rounded p-2">
+              <a href="#signup">Sign Up</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
