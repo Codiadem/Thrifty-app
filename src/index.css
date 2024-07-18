@@ -3,4 +3,21 @@
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;  
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+.container{
+    height: 400px;
+    margin: auto;   
+    background-color: #371694;
+}
+.welcome-statement{
+    color: white;
+    font-size: 50px;
+    max-width: 600px;
+    text-align: center;
+}
