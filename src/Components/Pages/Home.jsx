@@ -11,7 +11,7 @@ function Home() {
         </h1>
         <p>
           Enjoy spending and managing your accounts with simplicity and
-          confidence. You are cash smarter with confidence{" "}
+          confidence. You are cash smarter with confidence
         </p>
       </div>
     </>
