@@ -49,13 +49,34 @@
   padding: 0;
 }
 .container {
-  height: 400px;
+  height: 700px;
   margin: auto;
   background-color: #371694;
+  display: flex;
 }
 .welcome-statement {
   color: white;
   font-size: 50px;
   max-width: 600px;
+  margin-left: 100px;
+  padding-top: 220px;
+  line-height: 50px;
+}
+.welcome-sentence{
+  color: white;
+  width: 450px;
+  margin: 50px 0 0 100px;
+}
+.hero-img{
+  margin: 50px 0 10px 0;
+}
+.recommendations{
+  background-color: white;
+  height: 300px;
+}
+.recommended-by{
+  color: rgb(60, 60, 253);
+  font-weight: bold;
   text-align: center;
+  font-size: 20px;
 }
