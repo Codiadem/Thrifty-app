@@ -40,7 +40,6 @@ function Header() {
           <div className="w-6 h-1 bg-primaryBlue"></div>
           <div className="w-6 h-1 bg-primaryBlue"></div>
           <div className="w-6 h-1 bg-primaryBlue"></div>
-
           {/* menu */}
           <ul className="bg-primaryBlue w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150 flex flex-col space-y-3 justify-end">
             <button className="px-10 py-8 relative ml-auto">

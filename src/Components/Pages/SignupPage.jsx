@@ -68,6 +68,8 @@ const SignupPage = () => {
                       </div>
                       
                     </form>
+
+                    {/*cAuthentication for google starts here */}
               
                     <div className="flex items-center w-full my-9 font-bold">
                         <hr className="w-full border-b" />
