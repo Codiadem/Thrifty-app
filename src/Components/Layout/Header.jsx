@@ -13,7 +13,7 @@ function Header() {
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <nav>
-          <ul className="flex justify-between space-x-20">
+          <ul className="hidden md:flex justify-between space-x-7 lg:space-x-20">
             <li className="">
               <a href="#home">Home</a>
             </li>
@@ -26,7 +26,7 @@ function Header() {
           </ul>
         </nav>
         <div className="opt">
-          <ul className="flex space-x-10 items-center">
+          <ul className="hidden md:flex space-x-10 items-center">
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
@@ -36,20 +36,24 @@ function Header() {
           </ul>
         </div>
         {/* hamburger */}
-        <button className="group space-y-1">
+        <button className="group space-y-1 group md:hidden">
           <div className="w-6 h-1 bg-primaryBlue"></div>
           <div className="w-6 h-1 bg-primaryBlue"></div>
           <div className="w-6 h-1 bg-primaryBlue"></div>
 
           {/* menu */}
-          <ul className="bg-primaryBlue w-screen pb-10 absolute top-full right-0 duration-150 flex flex-col space-y-3 justify-end">
-            <li className="">
+          <ul className="bg-primaryBlue w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150 flex flex-col space-y-3 justify-end">
+            <button className="px-10 py-8 relative ml-auto">
+              <div className="w-6 h-1 rotate-45 absolute bg-[#FFFFFF]"></div>
+              <div className="w-6 h-1 -rotate-45 absolute bg-[#FFFFFF]"></div>
+            </button>
+            <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
               <a href="#home">Home</a>
             </li>
-            <li>
+            <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
               <a href="#about">About</a>
             </li>
-            <li>
+            <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
               <a href="#contact">Contact</a>
             </li>
           </ul>
