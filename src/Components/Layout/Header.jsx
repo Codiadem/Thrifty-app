@@ -41,7 +41,7 @@ function Header() {
           <div className="w-6 h-1 bg-primaryBlue"></div>
           <div className="w-6 h-1 bg-primaryBlue"></div>
 
-          {/* menu */}
+          {/* menu
           <ul className="bg-primaryBlue w-screen pb-10 absolute top-full right-0 duration-150 flex flex-col space-y-3 justify-end">
             <li className="">
               <a href="#home">Home</a>
@@ -52,7 +52,7 @@ function Header() {
             <li>
               <a href="#contact">Contact</a>
             </li>
-          </ul>
+          </ul> */}
         </button>
       </div>
     </>
