@@ -10,29 +10,31 @@ function Home() {
       <Header />
       {/* container for home page */}
       <div className="container">
+        <div className="hero-container">
+          {/* container for text */}
+          <div>
+            <h1 className="welcome-statement">
+              Your Spending Just Got More Confident
+            </h1>
+            <p className="welcome-sentence">
+              Enjoy spending and managing your accounts with simplicity and
+              confidence. You are cash smarter with Thrifty.
+            </p>
+          </div>
 
-        {/* container for text */}
-        <div>
-          <h1 className="welcome-statement">
-            Your Spending Just Got More Confident
-          </h1>
-          <p className="welcome-sentence">
-            Enjoy spending and managing your accounts with simplicity and
-            confidence. You are cash smarter with confidence
-          </p>
-        </div>
-
-        {/* container for image */}
-        <div>
-          <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-img" />
-        </div>
-        {/* a section for the get started button */}
-        <section>
-          <button>Get Started</button>
+          {/* container for image */}
+          <div>
+            <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-img" />
+          </div>
+          </div>          
+        {/* get started button */}     
+        <section className="get-started">
+              <button type="button" className="get-started-btn">
+                <a href="" className="get-started-link">Get Started</a>
+              </button>
         </section>
       </div>
 
-     
       
       {/* a section for recommendations */}
       <section className="recommendations">

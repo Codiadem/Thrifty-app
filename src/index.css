@@ -53,6 +53,8 @@
   max-width: 1500px;
   margin: auto;
   background-color: #371694;
+}
+.hero-container{
   display: flex;
 }
 .welcome-statement {
@@ -70,6 +72,18 @@
 }
 .hero-img{
   margin: 50px 0 10px 0;
+}
+.get-started-btn{
+  color: #371694;
+  font-weight: bold;
+  background-color: #A7A8FD;
+  padding: 10px 29px;
+  border-radius: 5px;
+}
+.get-started{
+  width: 350px;
+  text-align: center;
+  margin-top: -90px;
 }
 .recommendations{
   background-color: white;
