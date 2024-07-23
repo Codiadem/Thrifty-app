@@ -49,13 +49,88 @@
   padding: 0;
 }
 .container {
-  height: 400px;
+  height: 700px;
+  max-width: 1500px;
   margin: auto;
   background-color: #371694;
+}
+.hero-container{
+  display: flex;
 }
 .welcome-statement {
   color: white;
   font-size: 50px;
   max-width: 600px;
+  margin-left: 100px;
+  padding-top: 220px;
+  line-height: 50px;
+}
+.welcome-sentence{
+  color: white;
+  width: 450px;
+  margin: 50px 0 0 100px;
+}
+.hero-img{
+  margin: 50px 0 10px 0;
+}
+.get-started-btn{
+  color: #371694;
+  font-weight: bold;
+  background-color: #A7A8FD;
+  padding: 10px 29px;
+  border-radius: 5px;
+}
+.get-started{
+  width: 350px;
   text-align: center;
+  margin-top: -90px;
+}
+.recommendations{
+  background-color: white;
+  height: 300px;
+}
+.recommended-by{
+  color: rgb(34, 131, 249);
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.logos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 85px;
+}
+.why-choose-us{
+  height: 500px;
+  background: #A7A8FD;
+}
+.why-choose-us-text{
+  font-weight: 900;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #371694;
+  text-align: center;
+  padding-top: 50px;
+}
+.why-choose-us-content{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 45px;
+}
+.content{
+  width: 500px;
+  text-align: justify;
+}
+
+@media (max-width: 950px) {
+  .logo {
+    width: 100px;
+  }
+  .container{
+    background-image: url("./../src/images/hero-img-web.png");
+    background-color: #371694;
+    background-repeat: no-repeat;
+  }
 }
