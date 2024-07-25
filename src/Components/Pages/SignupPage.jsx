@@ -8,19 +8,19 @@ const SignupPage = () => {
       <div>
             {/*container for Signup page */}
 
-            <div className='Container flex mx-auto min-h-screen text-center'> 
+            <div className='Container md:flex mx-auto min-h-screen text-center'> 
 
                 {/*container for background starts here */}
 
-                <div className='background w-1/2 bg-[#371694] flex items-center justify-center'>
+                <div className=' w-full md:background md:w-1/2 md:bg-[#371694] md:flex items-center justify-center'>
 
                    <div>
-									  	<img src={logo} alt="" className=" w-11.2" />
+									  	<img src={logo} alt="" className=" hidden  md:block md:w-[8rem] lg:w-[15rem]" />
 									</div>
 
                 </div>
                 {/*container for Form starts here */}
-                <div className='form-container w-1/2 p-9'>
+                <div className='form-container w-full md:w-1/2 p-9'>
                     <form className='inner-container items-center'>
                       <h2 className='form-title pb-[3rem] text-3xl text-[#371694] font-bold font-DMSans'> Sign Up</h2>
 
@@ -65,7 +65,7 @@ const SignupPage = () => {
                       </div>
 
                       <div className='form-group flex items-center justify-center'>
-                        <input className="mt-5 tracking-wide font-bold bg-[#A7A8FD] text-[#371694] w-[30rem] self-auto py-4 rounded-lg hover:bg-[#9294f7] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit" value='Signup' />
+                        <input className="mt-5 tracking-wide font-bold bg-[#A7A8FD] text-[#371694] w-[12rem] sm:w-[20rem] md:w-[25rem] lg:w-[30rem] self-auto py-4 rounded-lg hover:bg-[#9294f7] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit" value='Signup' />
                       </div>
                       
                     </form>
@@ -85,10 +85,10 @@ const SignupPage = () => {
                         >
                            
                            <div>
-									          	  <img src={google} alt="" className=" w-11.2" />
+									          	  <img src={google} alt="" className=" sm:w-[2.5rem] md:w-[5rem]  lg:w-11.2" />
 									        </div>
 
-                            <p>Signup with Google</p>
+                            <p className='font-bold'>Sign Up with Google</p>
                         </button>
 
                           <div className="mt-4 text-grey-600">
