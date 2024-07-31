@@ -41,16 +41,16 @@ function Home() {
         <h3 className="recommended-by">Recomended By</h3>
         <div className="logos">
           <div>
-            <img src="./../../" alt="logo" />
+            <img src="./../../src/images/kuda.png" alt="kudda-logo" className="recommended-company" />
           </div>
           <div>
-            <img src="" alt="money line with nanacy" className="moneyline" />
+            <img src="./../../src/images/moneyline.png" alt="money line with nanacy" className="recommended-company" />
           </div>
           <div>
-            <img src="" alt="leom technologies" className="leom-tech" />
+            <img src="./../../src/images/leom.png" alt="leom technologies" className="recommended-company" />
           </div>
           <div>
-            <img src="" alt="tech4dev" className="tech4dev" />
+            <img src="./../../src/images/tech4dev.png" alt="tech4dev" className="recommended-company" />
           </div>
         </div>
       </section>
@@ -59,8 +59,8 @@ function Home() {
         <div className="text-heading">
           <h1 className="why-choose-us-text">Why Choose Us</h1>
         </div>
-          <div className="why-choose-us-content">
-            <img src="./../." />
+        <div className="why-choose-us-content">
+            <img src="./../../src/images/lady.png" alt="why choose us" className="why-choose-us-img" />
             <p className="content">Our team comprises industry-leading professionals with extensive experience and 
               deep knowledge in our field. This ensures that we provide top-notch solutions 
               tailored to your specific needs. We are committed to delivering the highest quality 
@@ -71,7 +71,7 @@ function Home() {
               We stay ahead of the curve by embracing the latest technologies and trends. 
               Our innovative approach allows us to offer cutting-edge solutions that drive 
               efficiency and growth for your business.</p>
-          </div>   
+        </div>   
       </section>        
     </>
   );
