@@ -1,10 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/Thrifty-logo.png';
 import logo_mobile from '../../assets/Thrifty-logo-mobile.png'
 import google from '../../assets/Google.png';
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate} from "react-router-dom";
+import './Signup.css'
+
 
 const SignupPage = () => {
+
+      {/* handle form data */}
+
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      });
+      
+
+      {/* handle form history and change */}
+
+      const [error, setError] = useState('');
+       const navigate = useNavigate();
+
+       const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value
+        });
+      };
+
+
+    {/* handle form Submission */}
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        const { name, email, password, confirmPassword } = formData;
+    
+        if (password !== confirmPassword) {
+          setError('Passwords do not match !');
+          return;
+        }
+    
+        try {
+          const response = await fetch('/api/signup', {  // Replace with your API endpoint
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, password })
+          });
+    
+          if (!response.ok) {
+            const errorData = await response.json();
+            setError(errorData.message || 'Something went wrong !');
+            return;
+          }
+    
+          history.push('/login');  // Redirect to login page after successful signup
+        } catch (error) {
+          setError('Network error !');
+        }
+      };
+      
   return (
       <div>
 
@@ -39,27 +98,28 @@ const SignupPage = () => {
                     </ul>
                   </div>
                   {/* hamburger */}
-                  <button className="group space-y-1 group md:hidden">
-                    <div className="w-6 h-1 bg-primaryBlue"></div>
-                    <div className="w-6 h-1 bg-primaryBlue"></div>
-                    <div className="w-6 h-1 bg-primaryBlue"></div>
-                    {/* menu */}
+               <div className="group space-y-1 md:hidden">
+                    <button className="flex flex-col space-y-1">
+                      <div className="w-6 h-1 bg-primaryBlue"></div>
+                      <div className="w-6 h-1 bg-primaryBlue"></div>
+                      <div className="w-6 h-1 bg-primaryBlue"></div>
+                    </button>
                     <ul className="bg-primaryBlue w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150 flex flex-col space-y-3 justify-end">
-                      <button className="px-10 py-8 relative ml-auto">
-                        <div className="w-6 h-1 rotate-45 absolute bg-[#FFFFFF]"></div>
-                        <div className="w-6 h-1 -rotate-45 absolute bg-[#FFFFFF]"></div>
-                      </button>
-                      <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
-                        <a href="#home">Home</a>
-                      </li>
-                      <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
-                        <a href="#about">About</a>
-                      </li>
-                      <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
-                        <a href="#contact">Contact</a>
-                      </li>
-                    </ul>
-                  </button>
+                        <div className="px-10 py-8 relative ml-auto">
+                          <div className="w-6 h-1 rotate-45 absolute bg-[#FFFFFF]"></div>
+                          <div className="w-6 h-1 -rotate-45 absolute bg-[#FFFFFF]"></div>
+                        </div>
+                        <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
+                          <a href="#home">Home</a>
+                        </li>
+                        <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
+                          <a href="#about">About</a>
+                        </li>
+                        <li className="flex justify-center w-full py-4 hover:bg-[#D9D9D9]">
+                          <a href="#contact">Contact</a>
+                        </li>
+                      </ul>
+               </div>
             </div>
 
 
@@ -79,8 +139,14 @@ const SignupPage = () => {
                 </div>
                 {/*container for Form starts here */}
                 <div className='form-container w-full md:w-1/2 p-9'>
-                    <form className='inner-container items-center'>
+                    <form className='inner-container items-center' onSubmit={handleSubmit}>
                       <h2 className='form-title pb-[3rem] text-3xl text-[#371694] font-bold font-DMSans'> Sign Up</h2>
+
+                      {error && (
+                       <p className="error">
+                        {error}
+                         </p>
+                       )}
 
                       <div className='form-group flex items-center justify-center gap-2 py-3'>
                        
@@ -89,6 +155,8 @@ const SignupPage = () => {
                         type="text" 
                         name='name'
                         placeholder='Name'
+                        value={formData.name}
+                         onChange={handleChange}
                         />
                       </div>
 
@@ -99,6 +167,8 @@ const SignupPage = () => {
                         type="email" 
                         name='email'
                         placeholder='Email'
+                        value={formData.email}
+                        onChange={handleChange}
                         />
                       </div>
 
@@ -109,6 +179,8 @@ const SignupPage = () => {
                         type="password" 
                         name='password'
                         placeholder='Password'
+                        value={formData.password}
+                        onChange={handleChange}
                         />
                       </div>
 
@@ -117,8 +189,10 @@ const SignupPage = () => {
                         <input 
                        className="form-control w-full px-5 py-5 rounded-lg font-medium bg-[#F5F4F8]  placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="password" 
-                        name='confirmpassword'
+                        name='confirmPassword'
                         placeholder='Confirm Password'
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
                         />
                       </div>
 
@@ -152,9 +226,9 @@ const SignupPage = () => {
                           <div className="mt-4 text-grey-600">
                                        Already have an account?{" "}
                                 <span>
-                                        <a className="text-[#371694] hover:underline" href="#">
-                                        <NavLink to="/login">Log in</NavLink>
-                                      </a>
+                                      <NavLink className="text-[#371694] hover:underline" to="/login">
+                                        Log in
+                                      </NavLink>
                                   </span>
                           </div>
                    </div>
