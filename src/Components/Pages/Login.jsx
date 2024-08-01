@@ -9,18 +9,25 @@ const LoginPage = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
+
   return (
     <div className="flex flex-col md:flex-row h-screen">
-      {/* Container covering half of the page for the logo */}
-      <div className="w-full md:w-1/2 bg-[#371694] flex items-center justify-center">
-        <img src={logo} alt="Thrifty-logo" className="max-w-full" />
+      {/* Container covering half of the page for the logo and the hamburger menu on smaller screens*/}
+      <div className="w-full md:w-1/2 bg-[#fff] md:bg-[#371694] flex items-center justify-between p-4 md:p-0 md:flex-col md:justify-center md:items-center">
+        <img src={logo} alt="Thrifty-logo" className="h-12 md:h-auto bg-[#371694]" />
+        <button
+          className="md:hidden text-white"
+          onClick={toggleMenu}
+        >
+          &#9776; {/* Hamburger menu icon */}
+        </button>
       </div>
-      {/* Container covering the other half of the page with the login form */}
+
+      {/* Container covering the login form */}
       <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
         <div className="p-8 w-full mb-24">
-          <h1 className="text-6xl text-[#371694] mb-20 flex items-center justify-center">
-            Welcome Back!
+          <h1 className="text-4xl md:text-6xl text-[#371694] mb-10 md:mb-20 text-center">
+            {menuOpen ? "Login" : "Welcome Back!"}
           </h1>
           {/* code for the login form */}
           <form className="space-y-6 ">
@@ -70,13 +77,13 @@ const LoginPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100"
+            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100 font-bold"
           >
-            <img src={Google} alt="Google" className="w-5 h-5 mr-2" /> Sign Up
+            <img src={Google} alt="Google" className="w-9 h-9 mr-2" /> Sign Up
             with Google
           </button>
           <div className="mt-4 text-center">
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-gray-500 text-[#9CA3AF]">
               Need an account?{" "}
               <a href="#" className="text-[#371694] hover:underline">
                 <NavLink to="/Sign-up">Sign Up</NavLink>
