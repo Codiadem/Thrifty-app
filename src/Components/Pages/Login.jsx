@@ -1,10 +1,40 @@
 import React, { useState } from "react";
 import logo from "../../assets/Thrifty-logo.png";
 import Google from "../../assets/Google.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const useNavigate = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("./Home");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/Home");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -14,11 +44,12 @@ const LoginPage = () => {
     <div className="flex flex-col md:flex-row h-screen">
       {/* Container covering half of the page for the logo and the hamburger menu on smaller screens*/}
       <div className="w-full md:w-1/2 bg-[#fff] md:bg-[#371694] flex items-center justify-between p-4 md:p-0 md:flex-col md:justify-center md:items-center">
-        <img src={logo} alt="Thrifty-logo" className="h-12 md:h-auto bg-[#371694]" />
-        <button
-          className="md:hidden text-white"
-          onClick={toggleMenu}
-        >
+        <img
+          src={logo}
+          alt="Thrifty-logo"
+          className="h-12 md:h-auto bg-[#371694]"
+        />
+        <button className="md:hidden text-[#371694] text-3xl" onClick={toggleMenu}>
           &#9776; {/* Hamburger menu icon */}
         </button>
       </div>
@@ -72,7 +103,7 @@ const LoginPage = () => {
           </form>
           <div className="mt-6 flex items-center justify-between font-bold">
             <span className="border-t w-1/4 "></span>
-            <span className="text-sm text-gray-500">or</span>
+            <span className="text-sm text-gray-500">OR</span>
             <span className="border-t w-1/4"></span>
           </div>
           <button
