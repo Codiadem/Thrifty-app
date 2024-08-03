@@ -5,6 +5,8 @@ export default {
     colors: {
       // custom colors here
       primaryBlue: "#371694",
+      profileBox: "#ECE6FF",
+      white: "#FFFFFF",
     },
 
     screens: {
@@ -19,6 +21,7 @@ export default {
 
     fontFamily: {
       DMSans: ["DM Sans", "sans-serif"],
+      Inter: ["Inter", "sans-serif"],
     },
 
     extend: {},

@@ -1,0 +1,107 @@
+.wrapper {
+  background-color: var(--profileBox);
+  width: 80%;
+  margin: 30px auto 0;
+  padding: 30px;
+  border-radius: 7px;
+}
+
+.dash {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.dash img {
+  width: 200px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.user-info .user-name {
+  color: var(--primaryblue);
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.wrapper h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primaryblue);
+  font-weight: 500;
+}
+
+.input {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.income-total {
+  width: 200px;
+  height: 130px;
+  border-radius: 7px;
+  display: block;
+  background-color: var(--primaryblue);
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+.expense-total {
+  width: 200px;
+  height: 130px;
+  border-radius: 7px;
+  display: block;
+  background-color: var(--primaryblue);
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.income-total p:nth-child(2) {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.expense-total p:nth-child(2) {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .dash {
+    display: block;
+    /* width: 60%; */
+    justify-content: center;
+    gap: 40px;
+    padding-left: 20px;
+    /* margin: 0 auto; */
+  }
+  .dash img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .user-info {
+    display: block;
+  }
+  .user-info .user-name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .user-info .money-balance {
+    margin-top: 20px;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+}

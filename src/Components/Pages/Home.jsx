@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Layout/Header";
-import Image from "../../../src/images/hero-img-web.png"
+import Image from "../../../src/images/hero-img-web.png";
 
 function Home() {
   return (
@@ -8,7 +8,6 @@ function Home() {
       <Header />
       {/* container for home page */}
       <div className="container">
-
         {/* container for text */}
         <div>
           <h1 className="welcome-statement">
@@ -22,7 +21,11 @@ function Home() {
 
         {/* container for image */}
         <div>
-          <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-img" />
+          <img
+            src="./../../src/images/hero-img-web.png"
+            alt="hero-image"
+            className="hero-img"
+          />
         </div>
         {/* a section for the get started button */}
         <section>
@@ -30,8 +33,6 @@ function Home() {
         </section>
       </div>
 
-     
-      
       {/* a section for recommendations */}
       <section className="recommendations">
         <h3 className="recommended-by">Recomended By</h3>
