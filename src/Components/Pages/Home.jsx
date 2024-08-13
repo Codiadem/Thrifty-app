@@ -2,8 +2,6 @@ import React from "react";
 import Header from "../Layout/Header";
 import Image from "../../../src/images/hero-img-web.png";
 
-
-
 function Home() {
   return (
     <>
@@ -35,7 +33,6 @@ function Home() {
         </section>
       </div>
 
-      
       {/* a section for recommendations */}
       <section className="recommendations">
         <h3 className="recommended-by">Recomended By</h3>

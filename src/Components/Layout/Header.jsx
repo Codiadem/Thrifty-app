@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/logo-white-bg.png";
+import logo from "../../images/logo-blk-bg.png";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <>
-      <div className="navbar flex justify-between items-center p-1.5">
+      <div className="navbar flex justify-between items-center p-1.5 bg-primaryBlue text-white">
         <Link to="/">
           <img src={logo} alt="logo" className="logo" />
         </Link>
@@ -30,16 +30,16 @@ function Header() {
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
-            <li className="border-2 border-primaryBlue rounded p-2">
+            <li className="border-2 border-white rounded p-2 px-6">
               <NavLink to="/sign-up">Sign Up</NavLink>
             </li>
           </ul>
         </div>
         {/* hamburger */}
         <button className="group space-y-1 group md:hidden">
-          <div className="w-6 h-1 bg-primaryBlue"></div>
-          <div className="w-6 h-1 bg-primaryBlue"></div>
-          <div className="w-6 h-1 bg-primaryBlue"></div>
+          <div className="w-6 h-1 bg-white"></div>
+          <div className="w-6 h-1 bg-white"></div>
+          <div className="w-6 h-1 bg-white"></div>
           {/* menu */}
           <ul className="bg-primaryBlue w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150 flex flex-col space-y-3 justify-end">
             <button className="px-10 py-8 relative ml-auto">
