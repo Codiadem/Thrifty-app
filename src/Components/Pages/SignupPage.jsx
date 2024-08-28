@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import logo from '../../assets/Thrifty-logo.png';
-import logo_mobile from '../../assets/Thrifty-logo-mobile.png'
+import mb_logo from "../../images/logo-white-bg.png";
 import google from '../../assets/Google.png';
 import { NavLink, Link, useNavigate} from "react-router-dom";
 import './Signup.css'
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from '../../firebase';
 
 
 const SignupPage = () => {
@@ -36,7 +38,7 @@ const SignupPage = () => {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name, email, password, confirmPassword } = formData;
+        const { email, password, confirmPassword } = formData;
     
         if (password !== confirmPassword) {
           setError('Passwords do not match !');
@@ -44,23 +46,20 @@ const SignupPage = () => {
         }
     
         try {
-          const response = await fetch('/api/signup', {  // Replace with your API endpoint
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, email, password })
-          });
-    
-          if (!response.ok) {
-            const errorData = await response.json();
-            setError(errorData.message || 'Something went wrong !');
-            return;
-          }
-    
-          history.push('/login');  // Redirect to login page after successful signup
+          await createUserWithEmailAndPassword(auth, email, password);
+          navigate('/login');
         } catch (error) {
-          setError('Network error !');
+          setError(error.message || 'Something went wrong !');
+        }
+      };
+    
+      const handleGoogleSignup = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+          await signInWithPopup(auth, provider);
+          navigate('/login');
+        } catch (error) {
+          setError(error.message);
         }
       };
       
@@ -72,7 +71,7 @@ const SignupPage = () => {
 
           <div className=" md:hidden navbar flex justify-between items-center p-1.5">
                   <Link to="/">
-                    <img src={logo_mobile} alt="logo" className="logo" />
+                    <img src={mb_logo} alt="logo" className="w-[10rem] p-2" />
                   </Link>
                   <nav>
                     <ul className="hidden md:flex justify-between space-x-7 lg:space-x-20">
@@ -217,7 +216,7 @@ const SignupPage = () => {
                         >
                            
                            <div>
-									          	  <img src={google} alt="" className=" sm:w-[2.5rem] md:w-[5rem]  lg:w-11.2" />
+									          	  <img src={google} alt="" className=" sm:w-[2.5rem] md:w-[5rem]  lg:w-9" />
 									        </div>
 
                             <p className='font-bold'>Sign Up with Google</p>
