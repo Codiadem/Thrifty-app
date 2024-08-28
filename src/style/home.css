@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    height: 700px;
+    max-width: 1500px;
+    margin: auto;
+    background-color: #371694;
+  }
+  .hero-container{
+    display: flex;
+  }
+  .welcome-statement {
+    color: white;
+    font-size: 50px;
+    max-width: 600px;
+    margin-left: 100px;
+    padding-top: 220px;
+    line-height: 50px;
+  }
+  .welcome-sentence {
+    color: white;
+    width: 450px;
+    margin: 50px 0 0 100px;
+  }
+  .hero-img {
+    margin: 50px 0 10px 0;
+  }
+  .get-started-btn{
+    color: #371694;
+    font-weight: bold;
+    background-color: #A7A8FD;
+    padding: 10px 29px;
+    border-radius: 5px;
+  }
+  .get-started{
+    width: 350px;
+    text-align: center;
+    margin-top: -90px;
+  }
+  .recommendations{
+    background-color: white;
+    margin: -10px 0;
+    height: 300px;
+  }
+  .recommended-by{
+    color: #4f24c4;
+    padding-top: 20px;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  .recommended-company{
+    height: 50px;
+    width: 160px;
+  }
+  .logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 85px;
+  }
+  
+  .why-choose-us{
+    height: 462px;
+    background: #A7A8FD;
+  }
+  .why-choose-us-text{
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 25px;
+    color: #371694;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .why-choose-us-content{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 45px;
+  }
+  .content{
+    width: 500px;
+    text-align: justify;
+  }
+  .why-choose-us-img{
+    margin-top: -70px;
+    height: 400px;
+    width: 300px;
+  }
+  @media (max-width: 950px) {
+    .logo {
+      width: 100px;
+    }
+    .hero-img{
+      display: none;
+    }
+    .container{
+      justify-content: center;
+      background-image: url("./../src/images/hero-img-web.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      filter: blur(1px);
+    }
+    .welcome-statement{
+      justify-content: center;
+      max-width: 450px;
+      line-height: 1;
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 0;
+    }
+    .welcome-sentence{
+      max-width: 450px;
+      justify-content: center;
+      font-size: 20px;
+      margin-top: 80px;
+    }
+    .recommendations{
+      min-width: 700px;
+      background-color: #D9D9D9;
+      
+    }
+    .recommended-company{
+      height: 30px;
+      width: 90px;
+      justify-content: space-between;
+      margin-right: 30px;
+  
+    }
+    .get-started{
+      margin-top: 70px;
+    }
+    .why-choose-us{
+      height: 700px;
+      background-color: white;
+    }
+   .text-heading, .why-choose-us-content{
+      margin-top: 100px;
+      background-color: #D9D9D9;
+      border-radius: 10px;
+      margin-left: 180px;
+      width: 500px;
+      padding: 0 10px 10px 10px;
+      margin-bottom: -115px;
+      justify-content: space-evenly;
+   }
+   .why-choose-us-img{
+    display: none;
+   }
+   .content{
+    text-wrap: wrap;
+    padding: 25px;
+    font-size: 25px;
+   } 
+  }
+  
