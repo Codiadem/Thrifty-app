@@ -1,52 +1,43 @@
 import React, { useState } from 'react';
 import logo from '../../assets/Thrifty-logo.png';
 import mb_logo from "../../images/logo-white-bg.png";
-import google from '../../assets/Google.png';
 import { NavLink, Link, useNavigate} from "react-router-dom";
 import './Signup.css'
-import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '../../firebase';
 
 const ForgotPassword = () => {
 
   {/* handle form data */}
 
-  const [formData, setFormData] = useState({
-    newpassword: '',
-    confirmPassword: ''
-  });
+  const [formData, setFormData] = useState({ email: '' });
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
   
 
-  {/* handle form history and change */}
+{/* handle form change */}
 
-  const [error, setError] = useState('');
-   const navigate = useNavigate();
-
-   const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
-
-{/* handle form Submission */}
-
+  {/* handle form password reset */}
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password, confirmPassword } = formData;
-
-    if (password !== confirmPassword) {
-      setError('Passwords do not match !');
-      return;
-    }
+    const { email } = formData;
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/login');
+      await sendPasswordResetEmail(auth, email);
+      setSuccess('Password reset email sent! Check your inbox.');
+      setError('');
     } catch (error) {
-      setError(error.message || 'Something went wrong !');
+      setError(error.message || 'Something went wrong!');
+      setSuccess('');
     }
   };
 
@@ -112,65 +103,47 @@ const ForgotPassword = () => {
             </div>
 
 
-            {/*container for Signup page */}
+           {/* Container for Forgot Password page */}
+      <div className="Container md:flex mx-auto min-h-screen text-center">
+        <div className="w-full md:w-1/2 md:bg-[#371694] md:flex items-center justify-center">
+          <div>
+            <NavLink to="/">
+              <img src={logo} alt="logo" className="hidden md:block md:w-[8rem] lg:w-[15rem]" />
+            </NavLink>
+          </div>
+        </div>
 
-            <div className='Container md:flex mx-auto min-h-screen text-center'> 
+        <div className="form-container w-full md:w-1/2 p-9">
+          <form className="inner-container items-center" onSubmit={handleSubmit}>
+            <h2 className="form-title pb-[3rem] text-3xl text-[#371694] font-bold font-DMSans">
+              Forgot Password
+            </h2>
 
-                {/*container for background starts here */}
+            {error && <p className="error">{error}</p>}
+            {success && <p className="success">{success}</p>}
 
-                <div className=' w-full md:background md:w-1/2 md:bg-[#371694] md:flex items-center justify-center'>
+            <div className="form-group flex items-center justify-center gap-2 py-3">
+              <input
+                className="form-control w-full px-5 py-5 rounded-lg font-medium bg-[#F5F4F8] placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-                   <div>
-                   <NavLink to="/"><img src={logo} alt="" className=" hidden  md:block md:w-[8rem] lg:w-[15rem]" />
-                   </NavLink>
-									</div>
-
-                </div>
-                {/*container for Form starts here */}
-                <div className='form-container w-full md:w-1/2 p-9'>
-                    <form className='inner-container items-center' onSubmit={handleSubmit}>
-                      <h2 className='form-title pb-[3rem] text-3xl text-[#371694] font-bold font-DMSans'> Forgot Password!</h2>
-
-                      {error && (
-                       <p className="error">
-                        {error}
-                         </p>
-                       )}
-
-                      
-
-                      <div className='form-group flex items-center justify-center gap-2 py-3'>
-                       
-                        <input 
-                        className="form-control w-full px-5 py-5 rounded-lg font-medium bg-[#F5F4F8]  placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="password" 
-                        name='newPassword'
-                        placeholder='New Password'
-                        value={formData.newpassword}
-                        onChange={handleChange}
-                        />
-                      </div>
-
-                      <div className='form-group flex items-center justify-center gap-2 py-3'>
-                  
-                        <input 
-                       className="form-control w-full px-5 py-5 rounded-lg font-medium bg-[#F5F4F8]  placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="password" 
-                        name='confirmPassword'
-                        placeholder='Confirm Password'
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        />
-                      </div>
-
-                      <div className='form-group flex items-center justify-center'>
-                        <input className="mt-5 tracking-wide font-bold bg-[#A7A8FD] text-[#371694] w-[12rem] sm:w-[20rem] md:w-[25rem] lg:w-[30rem] self-auto py-4 rounded-lg hover:bg-[#9294f7] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit" value='Set Password' />
-                      </div>
-                      
-                    </form>
-
-                   </div>
-
+            <div className="form-group flex items-center justify-center">
+              <input
+                className="mt-5 tracking-wide font-bold bg-[#A7A8FD] text-[#371694] w-[12rem] sm:w-[20rem] md:w-[25rem] lg:w-[30rem] self-auto py-4 rounded-lg hover:bg-[#9294f7] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                type="submit"
+                value="Reset Password"
+              />
+            </div>
+          </form>
+        </div>
+        
             </div>
     </div>
   
