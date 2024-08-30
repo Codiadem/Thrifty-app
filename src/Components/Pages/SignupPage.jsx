@@ -6,6 +6,7 @@ import { NavLink, Link, useNavigate} from "react-router-dom";
 import './Signup.css'
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from '../../firebase';
+import Header from "../Layout/Header";
 
 
 const SignupPage = () => {
@@ -64,6 +65,8 @@ const SignupPage = () => {
       };
       
   return (
+    
+   
       <div>
 
          {/* header for mobile view */}
@@ -120,7 +123,7 @@ const SignupPage = () => {
                       </ul>
                </div>
             </div>
-
+           
 
             {/*container for Signup page */}
 
@@ -235,6 +238,7 @@ const SignupPage = () => {
 
             </div>
     </div>
+    
   )
 }
 
