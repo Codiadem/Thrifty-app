@@ -7,3 +7,12 @@
     width: 50%;
     margin: 0 auto;
 }
+
+.success{
+    color: green;
+    font-weight: 600;
+    border: 1px solid green;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
