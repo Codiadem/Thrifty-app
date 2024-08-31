@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../../assets/Thrifty-logo.png';
 import mb_logo from "../../images/logo-white-bg.png";
 import { NavLink, Link, useNavigate} from "react-router-dom";
-import './Signup.css'
+import '../../style/Signup.css'
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '../../firebase';
 
