@@ -3,10 +3,10 @@ import logo from '../../assets/Thrifty-logo.png';
 import mb_logo from "../../images/logo-white-bg.png";
 import google from '../../assets/Google.png';
 import { NavLink, Link, useNavigate} from "react-router-dom";
-import './Signup.css'
+import '../../style/Signup.css'
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from '../../firebase';
-import Header from "../Layout/Header";
+
 
 
 const SignupPage = () => {

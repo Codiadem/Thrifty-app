@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Pages/Login";
 import Dashboard from "./Components/Pages/Dashboard";
 import ForgotPassword from "./Components/Pages/ForgotPassword";
+import ExpenseList from "./Components/Pages/ExpenseList";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/expense" element={<ExpenseList />} />
         </Routes>
       </Router>
     </>
