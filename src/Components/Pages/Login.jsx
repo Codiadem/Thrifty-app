@@ -20,13 +20,26 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("./Home");
-    } catch (error) {
+      navigate("/Home");
+    } catch (error) {     
       setError(error.message);
     }
   };
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User signed up: ", userCredential.user);
+      navigate("/Home"); 
+    } catch (error) {
+      console.error("Signup error: ", error);
+      setError(error.message); 
+    }
+  };
 
-  const handleGoogleSignIn = async () => {
+ 
+  
+  const handleGoogleSignIn = async (e) => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
@@ -94,6 +107,9 @@ const LoginPage = () => {
             </div>
             <div className="flex justify-center ">
               <button
+              onClick={
+                handleLogin()
+                }
                 type="submit"
                 className="w-80  p-4 bg-[#A7A8FD] text-[#371694] text-2xl rounded-md hover:bg-blue-700 "
               >
@@ -107,9 +123,11 @@ const LoginPage = () => {
             <span className="border-t w-1/4"></span>
           </div>
           <button
+          onClick={
+            handleGoogleSignIn()
+          }
             type="submit"
-            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100 font-bold"
-          >
+            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100 font-bold">
             <img src={Google} alt="Google" className="w-9 h-9 mr-2" /> Sign Up
             with Google
           </button>
