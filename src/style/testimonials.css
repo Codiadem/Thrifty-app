@@ -4,11 +4,10 @@
 
 @layer base{
     body {
-        background-color: whitesmoke;
+        background-color: rgba(245, 245, 245, 0.689);
     }
 }
 
 .slick-slide > div {
     margin: 10px 10px;
-    
-}
+    }
