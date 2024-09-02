@@ -1,0 +1,16 @@
+.contain{
+    margin-top: 50px;
+    align-items: center;
+    height: 700px;
+}
+.wallet{
+    height: 400px;
+    width: 450px;
+    align-items: center;
+    justify-content: center;
+}
+.whytrack{
+    height: 400px;
+    width: 450px;
+    margin-top: 30px;
+}
