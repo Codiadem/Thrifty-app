@@ -7,7 +7,7 @@ export default {
       primaryBlue: "#371694",
       profileBox: "#ECE6FF",
       white: "#FFFFFF",
-      
+      secondaryBlue: "#5013FF",
     },
 
     screens: {
