@@ -9,14 +9,14 @@ function Header() {
 
   return (
     <>
-      <div className="navbar flex justify-between items-center p-1.5 bg-primaryBlue text-white sticky top-0">
+      <div className="navbar flex justify-between items-center p-1.5 bg-primaryBlue text-white sticky top-0 z-10">
         <Link to="/">
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <nav>
           <ul className="hidden md:flex justify-between space-x-7 lg:space-x-20">
             <li className="dropdown">
-              <a href=""><Dropdown /></a>
+              <Dropdown />
             </li>
             <li className="">
               <a href="#home">Home</a>
