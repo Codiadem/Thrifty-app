@@ -2,18 +2,22 @@ import React from "react";
 import logo from "../../images/logo-blk-bg.png";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import Dropdown from "./DropDown";
 
 function Header() {
   const [openNav, setOpenNav] = useState(false);
 
   return (
     <>
-      <div className="navbar flex justify-between items-center p-1.5 bg-primaryBlue text-white">
+      <div className="navbar flex justify-between items-center p-1.5 bg-primaryBlue text-white sticky top-0 z-10">
         <Link to="/">
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <nav>
           <ul className="hidden md:flex justify-between space-x-7 lg:space-x-20">
+            <li className="dropdown">
+              <Dropdown />
+            </li>
             <li className="">
               <a href="#home">Home</a>
             </li>
