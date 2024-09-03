@@ -5,7 +5,7 @@
   }
   .container {
     height: 700px;
-    max-width: 1500px;
+    width: 100%;
     margin: auto;
     background-color: #371694;
   }
@@ -25,15 +25,32 @@
     width: 450px;
     margin: 50px 0 0 100px;
   }
-  .hero-img {
-    margin: 50px 0 10px 0;
+  .hero-image {
+    margin: 100px 0 10px 0;
+    
+
   }
+  /* animation-duration: 400ms;
+    animation-name: fadeRight;
+    top: 149px;
+    right: 50px;
+    position: absolute;
+  @keyframes fadeRight {
+    from{
+      right: -1000px;
+    }
+    to{
+      right: 400px;
+    } 
+    
+    }*/
   .get-started-btn{
     color: #371694;
     font-weight: bold;
     background-color: #A7A8FD;
     padding: 10px 29px;
     border-radius: 5px;
+    margin-top: 10px;
   }
   .get-started{
     width: 350px;
@@ -90,6 +107,12 @@
     height: 400px;
     width: 300px;
   }
+  .testimonials{
+    background-color: whitesmoke;
+    min-height: 500px;
+  }
+
+
   @media (max-width: 950px) {
     .logo {
       width: 100px;
@@ -98,15 +121,15 @@
       display: none;
     }
     .container{
-      justify-content: center;
       background-image: url("./../src/images/hero-img-web.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
       filter: blur(1px);
+      min-width: 950px;
     }
     .welcome-statement{
-      justify-content: center;
+      /* justify-content: center; */
       max-width: 450px;
       line-height: 1;
       font-size: 40px;
@@ -143,7 +166,7 @@
       background-color: #D9D9D9;
       border-radius: 10px;
       margin-left: 180px;
-      width: 500px;
+      max-width: 950px;
       padding: 0 10px 10px 10px;
       margin-bottom: -115px;
       justify-content: space-evenly;

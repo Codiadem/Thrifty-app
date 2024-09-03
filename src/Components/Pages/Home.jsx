@@ -1,8 +1,13 @@
 import React from "react";
 import Header from "../Layout/Header";
 import Image from "../../../src/images/hero-img-web.png";
+import Profile from "./../../images/Keziah.jpg";
+import Testimonial from "./../../images/Tawakalitu.jpg";
 import "./../../style/home.css";
-
+import { Link, NavLink } from "react-router-dom";
+import Testimonials from "../Layout/Testimonials";
+import Footer from "../Layout/Footer";
+import WhyTrack from "../Layout/WhyTrack";
 function Home() {
   return (
     <>
@@ -23,13 +28,16 @@ function Home() {
 
           {/* container for image */}
           <div>
-            <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-img" />
+            <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-image" />
           </div>
           </div>          
         {/* get started button */}     
         <section className="get-started">
               <button type="button" className="get-started-btn">
-                <a href="" className="get-started-link">Get Started</a>
+                <a href="" className="get-started-link">
+                  <NavLink to="/sign-up">Get Started</NavLink>
+                </a>
+                
               </button>
         </section>
       </div>
@@ -71,7 +79,13 @@ function Home() {
               Our innovative approach allows us to offer cutting-edge solutions that drive 
               efficiency and growth for your business.</p>
         </div>   
-      </section>        
+      </section> 
+      <Testimonials />
+      <WhyTrack />
+      <Footer />
+       
+      
+
     </>
   );
 }
