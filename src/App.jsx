@@ -6,6 +6,7 @@ import Login from "./Components/Pages/Login";
 import Dashboard from "./Components/Pages/Dashboard";
 import ForgotPassword from "./Components/Pages/ForgotPassword";
 import ExpenseList from "./Components/Pages/ExpenseList";
+import AddTransaction from "./Components/Pages/AddTransaction";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/expense" element={<ExpenseList />} />
+          <Route path="/add-transaction" element={<AddTransaction />} />
         </Routes>
       </Router>
     </>
