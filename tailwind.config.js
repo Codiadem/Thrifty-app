@@ -27,5 +27,16 @@ export default {
 
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // adding a utility clause
+    function ({addUtilities}){
+      const newUtilities = {
+        "scrollbar-thin" : {
+          scrollbarWidth : "thin",
+          scrollbarColor : "rgb(31 29 29) white",
+
+        }
+      }
+         }
+  ],
 };
