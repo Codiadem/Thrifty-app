@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../Layout/Header";
 import Image from "../../../src/images/hero-img-web.png";
-import Profile from "./../../images/Keziah.jpg";
-import Testimonial from "./../../images/Tawakalitu.jpg";
 import "./../../style/home.css";
 import { Link, NavLink } from "react-router-dom";
 import Testimonials from "../Layout/Testimonials";
 import Footer from "../Layout/Footer";
 import WhyTrack from "../Layout/WhyTrack";
+
 function Home() {
   return (
     <>

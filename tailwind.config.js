@@ -1,3 +1,5 @@
+import { TbBackground } from 'react-icons/tb';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -28,15 +30,6 @@ export default {
     extend: {},
   },
   plugins: [
-    // adding a utility clause
-    function ({addUtilities}){
-      const newUtilities = {
-        "scrollbar-thin" : {
-          scrollbarWidth : "thin",
-          scrollbarColor : "rgb(31 29 29) white",
-
-        }
-      }
-         }
+    
   ],
 };
