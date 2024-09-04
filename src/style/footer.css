@@ -1,7 +1,11 @@
+.footer-container{
+    height: 550px;
+    background-color: #1f0f3b;
+}
 .footer {
-    background-color: #17054b;
-    /* height: 250px; */
+    background-color: #1f0f3b;
     padding-top: 10px;
+    color: white;
   }
   .ul {
       float: right;
@@ -16,8 +20,9 @@
       margin-left: 30px;
   }
   .copy {
-      margin-top: 150px;
+      margin-top: 250px;
       text-align: center;
+      color: white;
   }
   .linking {
       display: grid;
@@ -26,11 +31,10 @@
       margin: 20px;
   }
   .linking:hover{
-    color:#4f24c4;
     text-decoration: underline;
   }
   .linking > * {
-      color: black;
+      color: white;
       text-decoration: none;
   }
   @media (max-width: 600px){
