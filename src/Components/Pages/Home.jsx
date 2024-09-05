@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import Testimonials from "../Layout/Testimonials";
 import Footer from "../Layout/Footer";
 import WhyTrack from "../Layout/WhyTrack";
+import AboutUs from "./AboutUs";
 
 function Home() {
   return (
@@ -80,6 +81,7 @@ function Home() {
         </div>   
       </section> 
       <Testimonials />
+      <AboutUs />
       <WhyTrack />
       <Footer />
        
