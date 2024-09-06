@@ -14,7 +14,7 @@ function Testimonials() {
     };
   return (
     <>
-        <h1 className='text-center text-3xl font-semibold mt-5'>Testimonials</h1>
+        <h1 className='text-center text-3xl font-bold mt-7 test'>Testimonials</h1>
         <div className='w-3/4 m-auto'>
             <div className='mt-20'>
                 <Slider {...settings}>
