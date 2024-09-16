@@ -10,13 +10,14 @@ function Testimonials() {
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToScroll: 2,
     };
   return (
     <>
-        <h1 className='text-center text-3xl font-semibold mt-5 text-primaryblue'>Testimonials</h1>
-        <div className='w-3/4 m-auto'>
-            <div className='mt-20'>
+        <div className='bg-blue cont'>
+        <h1 className='text-center text-4xl font-semibold pt-8 text-white'>Testimonials</h1>
+        <div className='w-3/4 m-auto bg-grey'>
+            <div className='mt-0 bg-grey'>
                 <Slider {...settings}>
                     {data.map((d) => (
                     <div className='bg-white h-[450px] text-black rounded-xl'>
@@ -24,7 +25,7 @@ function Testimonials() {
                             <img src={d.img} alt="" className='h-44 w-44 rounded-full' />
                         </div>
                         <div className='flex flex-col justify-center items-center gap-4 p-4'>
-                            <p className='text-xl font-semibold'>{d.name}</p>
+                            <p className='text-xl font-semibold text-black'>{d.name}</p>
                             <p>{d.review}</p>
                             <button className='bg-primaryBlue text-white text-lg px-6 py-1 rounded-xl'>Read More</button>
                         </div>
@@ -32,6 +33,7 @@ function Testimonials() {
                     ))}
                 </Slider>
             </div>
+        </div>
         </div>
     </>
   );
