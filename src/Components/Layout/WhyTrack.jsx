@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "./../../images/empty-wallet.avif";
 import "./../../style/whytrack.css";
-
+import { NavLink, Link } from 'react-router-dom';
 function WhyTrack() {
   return (
     <>
@@ -21,7 +21,11 @@ function WhyTrack() {
                         Thrifty instantly finds and tracks your expences, letting 
                         you know what are your needs and luxuries as well as preventing 
                         you are over spending on luxuries.</p>
-                    <button className='mt-4 border-solid border-2 text-lg px-6 py-1 rounded-xl text-black'>Learn More</button>
+                    <button type='button' className='mt-4 border-solid border-2 text-lg px-6 py-1 rounded-xl text-black'>
+                        <a href="" className="get-started-link">
+                            <NavLink to="/about-us">Learn More</NavLink>
+                        </a>
+                    </button>
                 </div>
             </div>
 
