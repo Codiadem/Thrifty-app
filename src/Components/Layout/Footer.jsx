@@ -8,7 +8,7 @@ function Footer() {
     <>
         <div className='footer-container'>
             <div className="flex footer font-bold justify-around">
-                <div className='text-white mt-20'>
+                <div className='text-white mt-20 mr-40'>
                     <h1 className='text-6xl'>Get Started</h1>
                     <p className=' w-64'>Download Thrifty for free on the iOS and Google Play stores,
                         or sign up online today.</p>

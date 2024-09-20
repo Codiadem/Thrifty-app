@@ -20,7 +20,7 @@ function WhyTrack() {
                     <p className='mt-8 text-black'>Never pay for an unwanted item or service again. 
                         Thrifty instantly finds and tracks your expences, letting 
                         you know what are your needs and luxuries as well as preventing 
-                        you are over spending on luxuries.</p>
+                        you from over spending on luxuries.</p>
                     <button type='button' className='mt-4 border-solid border-2 text-lg px-6 py-1 rounded-xl text-black'>
                         <a href="" className="get-started-link">
                             <NavLink to="/about-us">Learn More</NavLink>
