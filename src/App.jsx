@@ -8,6 +8,7 @@ import ForgotPassword from "./Components/Pages/ForgotPassword";
 import ExpenseList from "./Components/Pages/ExpenseList";
 import AddTransaction from "./Components/Pages/AddTransaction";
 import Transaction from "./Components/Pages/Transaction";
+import AboutUs from "./Components/Pages/AboutUs";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/expense" element={<ExpenseList />} />
           <Route path="/add-transaction" element={<AddTransaction />} />
           <Route path= "/transaction" element={<Transaction />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Router>
     </>
