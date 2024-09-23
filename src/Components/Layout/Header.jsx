@@ -19,7 +19,7 @@ function Header() {
               <Dropdown />
             </li>
             <li className="">
-              <a href="#home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
             <NavLink to="/about-us">About</NavLink>
@@ -34,7 +34,7 @@ function Header() {
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
-            <li className="border-2 border-white rounded p-2 px-6">
+            <li className="bg-purple text-blue font-bold rounded p-2 px-6">
               <NavLink to="/sign-up">Sign Up</NavLink>
             </li>
           </ul>
