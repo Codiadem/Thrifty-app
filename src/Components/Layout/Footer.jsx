@@ -1,19 +1,23 @@
 import React from 'react'
 import "./../../style/footer.css";
+import { NavLink, Link } from 'react-router-dom';
+
 
 function Footer() {
   return (
     <>
         <div className='footer-container'>
             <div className="flex footer font-bold justify-around">
-                <div className='text-white mt-20'>
+                <div className='text-white mt-20 mr-40'>
                     <h1 className='text-6xl'>Get Started</h1>
                     <p className=' w-64'>Download Thrifty for free on the iOS and Google Play stores,
                         or sign up online today.</p>
                 </div>
                 <div className='mt-20'>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-                        Sign Up
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type='button'>
+                        <a href="" className="signup">
+                            <NavLink to="/sign-up">Sign Up</NavLink>
+                        </a>
                     </button>
                 </div>
             </div>   

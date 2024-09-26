@@ -10,6 +10,8 @@ export default {
       profileBox: "#ECE6FF",
       white: "#FFFFFF",
       secondaryBlue: "#5013FF",
+      black: "#000",
+      blue: "#1f0f3b",
     },
 
     screens: {
