@@ -27,36 +27,54 @@ function Home() {
 
           {/* container for image */}
           <div>
-            <img src="./../../src/images/hero-img-web.png" alt="hero-image" className="hero-image" />
+            <img
+              src="./../../src/images/hero-img-web.png"
+              alt="hero-image"
+              className="hero-image"
+            />
           </div>
-          </div>          
-        {/* get started button */}     
+        </div>
+        {/* get started button */}
         <section className="get-started">
-              <button type="button" className="get-started-btn">
-                <a href="" className="get-started-link">
-                  <NavLink to="/sign-up">Get Started</NavLink>
-                </a>
-                
-              </button>
+          <button type="button" className="get-started-btn">
+            <a href="" className="get-started-link">
+              <NavLink to="/sign-up">Get Started</NavLink>
+            </a>
+          </button>
         </section>
       </div>
 
-      
       {/* a section for recommendations */}
       <section className="recommendations">
         <h3 className="recommended-by">Recomended By</h3>
         <div className="logos">
           <div>
-            <img src="./../../src/images/kuda.png" alt="kudda-logo" className="recommended-company" />
+            <img
+              src="./../../src/images/kuda.png"
+              alt="kudda-logo"
+              className="recommended-company"
+            />
           </div>
           <div>
-            <img src="./../../src/images/moneyline.png" alt="money line with nanacy" className="recommended-company" />
+            <img
+              src="./../../src/images/moneyline.png"
+              alt="money line with nanacy"
+              className="recommended-company"
+            />
           </div>
           <div>
-            <img src="./../../src/images/leom.png" alt="leom technologies" className="recommended-company" />
+            <img
+              src="./../../src/images/leom.png"
+              alt="leom technologies"
+              className="recommended-company"
+            />
           </div>
           <div>
-            <img src="./../../src/images/tech4dev.png" alt="tech4dev" className="recommended-company" />
+            <img
+              src="./../../src/images/tech4dev.png"
+              alt="tech4dev"
+              className="recommended-company"
+            />
           </div>
         </div>
       </section>
@@ -66,25 +84,30 @@ function Home() {
           <h1 className="why-choose-us-text">Why Choose Us</h1>
         </div>
         <div className="why-choose-us-content">
-            <img src="./../../src/images/lady.png" alt="why choose us" className="why-choose-us-img" />
-            <p className="content">Our team comprises industry-leading professionals with extensive experience and 
-              deep knowledge in our field. This ensures that we provide top-notch solutions 
-              tailored to your specific needs. We are committed to delivering the highest quality 
-              products and services. Our rigorous quality control processes and attention to detail
-              guarantee that you receive only the best. Your satisfaction is our priority.
-              We listen to your needs, understand your goals, and work closely with you 
-              to achieve them. Our personalized service ensures that you feel valued and heard.
-              We stay ahead of the curve by embracing the latest technologies and trends. 
-              Our innovative approach allows us to offer cutting-edge solutions that drive 
-              efficiency and growth for your business.</p>
-        </div>   
-      </section> 
+          <img
+            src="./../../src/images/lady.png"
+            alt="why choose us"
+            className="why-choose-us-img"
+          />
+          <p className="content">
+            Our team comprises industry-leading professionals with extensive
+            experience and deep knowledge in our field. This ensures that we
+            provide top-notch solutions tailored to your specific needs. We are
+            committed to delivering the highest quality products and services.
+            Our rigorous quality control processes and attention to detail
+            guarantee that you receive only the best. Your satisfaction is our
+            priority. We listen to your needs, understand your goals, and work
+            closely with you to achieve them. Our personalized service ensures
+            that you feel valued and heard. We stay ahead of the curve by
+            embracing the latest technologies and trends. Our innovative
+            approach allows us to offer cutting-edge solutions that drive
+            efficiency and growth for your business.
+          </p>
+        </div>
+      </section>
       <Testimonials />
       <WhyTrack />
       <Footer />
-       
-      
-
     </>
   );
 }

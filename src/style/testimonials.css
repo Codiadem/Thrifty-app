@@ -2,14 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body {
-        background-color: rgba(227, 222, 222, 0.562);
-    }
-}
 
 .slick-slide > div {
-    margin: 10px 10px;
+    margin: 100px 10px;
     }
 .test{
     color: #371694;

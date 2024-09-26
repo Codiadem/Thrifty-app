@@ -17,7 +17,7 @@
     font-size: 50px;
     max-width: 600px;
     margin-left: 100px;
-    padding-top: 220px;
+    padding-top: 170px;
     line-height: 50px;
   }
   .welcome-sentence {
@@ -101,6 +101,7 @@
   .content{
     width: 500px;
     text-align: justify;
+    color: black;
   }
   .why-choose-us-img{
     margin-top: -70px;

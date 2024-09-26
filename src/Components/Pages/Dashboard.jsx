@@ -1,34 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Layout/Header";
-import { useState } from "react";
-// import ProfileImage from "../Layout/ProfileImage";
 import profileImage from "../../images/profile-img.png";
 import "../../style/dash1.css";
+import ExpenseTracker from "./Transaction";
+import ProfilePicture from "../Layout/ProfilePicture";
 
 function Dashboard() {
-  // handles the profile image
-  // const profilePicture = () => {
-  //   const [imageUrl, setImageUrl] = useState(null);
+  const [transactions, setTransactions] = useState(() => {
+    const localData = localStorage.getItem("transactions");
+    return localData ? JSON.parse(localData) : [];
+  });
 
-  //   const handleFileInput = (e) => {
-  //     const file = () => e.target.files[0];
-  //     const reader = new FileReader();
+  // State for balance, income, and expense
+  const [balance, setBalance] = useState(0);
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
 
-  //     reader.onload = (e) => setImageUrl(e.target.result);
-  //     reader.readAsDataURL(file);
-  //   };
-  // };
+  // Calculate balance, income, and expense whenever transactions change
+  useEffect(() => {
+    if (!transactions || !Array.isArray(transactions)) return;
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    transactions.forEach((transaction) => {
+      if (transaction.amount > 0) {
+        totalIncome += transaction.amount;
+      } else {
+        totalExpense += Math.abs(transaction.amount);
+      }
+    });
+
+    setIncome(totalIncome);
+    setExpense(totalExpense);
+    setBalance(totalIncome - totalExpense);
+
+    // Save updated transactions to localStorage
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  }, [transactions]);
 
   return (
     <>
-      <Header />
-      <div className="wrapper">
-        <div className="dash">
-          <img src={profileImage} alt="user's profile picture" />
-          <div className="user-info">
-            <span className="user-name">Chioma Ekpemerechi</span>
+      {/* <Header /> */}
+      <div className="wrapper lg:mx-40 ">
+        <div className="dash w-full flex flex-col md:flex-row pb-10 lg:f ">
+          <div className="image w-full flex items-center justify-center lg:justify end rounded-full">
+            <ProfilePicture />
+          </div>
+          <div className="user-info w-full flex flex-col items-center justify-center">
+            <span className="user-name whitespace-nowrap">
+              Chioma Ekpemerechi
+            </span>
             <p>
-              Current Balance: <span className="money-balance">300,000</span>
+              Current Balance:{" "}
+              <span className="money-balance whitespace-nowrap">{balance}</span>
             </p>
           </div>
         </div>
@@ -36,26 +61,18 @@ function Dashboard() {
         <div className="input">
           <div className="income-total">
             <p>Total Income</p>
-            <p>300,000</p>
+            <p>{income}</p>
           </div>
           <div className="expense-total">
             <p>Total Expense</p>
-            <p>100,000</p>
+            <p>{expense}</p>
           </div>
         </div>
-      </div>
-      <div className="dash-box bg-profileBox m-auto mt-10 w-5/6 h-96">
-        <div className="user-info flex items-center justify-around w-3/4 mx-auto space-x-7 pt-10 ">
-          {/* <ProfileImage /> */}
-          <div className="unique">
-            <span className="name text-primaryBlue font-bold sm:text-sm md:text-xl lg:text-4xl ">
-              Chioma Ekpemerechi
-            </span>
-            <span className="balance display-block">
-              Current Balance <span className="current-bal">300,000</span>
-            </span>
-          </div>
-        </div>
+        {/* ExpenseTracker Component: Pass setTransactions to manage transaction updates */}
+        <ExpenseTracker
+          transactions={transactions}
+          setTransactions={setTransactions}
+        />
       </div>
     </>
   );
