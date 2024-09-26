@@ -14,6 +14,22 @@
   justify-content: center;
   gap: 100px;
 }
+
+.profile-picture-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid var(--primaryblue);
+}
+
+.profile-dp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .dash img {
   width: 200px;
 }
@@ -42,6 +58,7 @@
   display: flex;
   gap: 30px;
   justify-content: center;
+  margin: 30px 0;
 }
 
 .income-total {
@@ -49,7 +66,7 @@
   height: 130px;
   border-radius: 7px;
   display: block;
-  background-color: var(--primaryblue);
+  background-color: rgb(83, 223, 83);
   color: white;
   text-align: center;
   padding-top: 20px;
@@ -59,7 +76,7 @@
   height: 130px;
   border-radius: 7px;
   display: block;
-  background-color: var(--primaryblue);
+  background-color: rgb(224, 56, 56);
   color: white;
   text-align: center;
   padding-top: 20px;
