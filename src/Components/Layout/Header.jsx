@@ -22,7 +22,7 @@ function Header() {
               <a href="/">Home</a>
             </li>
             <li>
-            <NavLink to="/about-us">About</NavLink>
+              <a href="#about">About</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
