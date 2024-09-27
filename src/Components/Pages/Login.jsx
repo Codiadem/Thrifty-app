@@ -27,27 +27,11 @@ const LoginPage = () => {
     }
   };
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("User signed up: ", userCredential.user);
-      navigate("/login");
-    } catch (error) {
-      console.error("Signup error: ", error);
-      setError(error.message);
-    }
-  };
-
   const handleGoogleSignIn = async (e) => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      navigate("/Home");
+      navigate("/dashboard");
     } catch (error) {
       setError(error.message);
     }

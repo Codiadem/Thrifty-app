@@ -95,6 +95,8 @@
 }
 
 @media (max-width: 480px) {
+  .profile-dp {
+  }
   .dash {
     display: block;
     /* width: 60%; */
