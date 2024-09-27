@@ -10,7 +10,6 @@ import AddTransaction from "./Components/Pages/AddTransaction";
 import Transaction from "./Components/Pages/Transaction";
 import AboutUs from "./Components/Pages/AboutUs";
 
-
 function App() {
   return (
     <>
@@ -23,8 +22,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/expense" element={<ExpenseList />} />
           <Route path="/add-transaction" element={<AddTransaction />} />
-          <Route path= "/transaction" element={<Transaction />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/transaction" element={<Transaction />} />
         </Routes>
       </Router>
     </>

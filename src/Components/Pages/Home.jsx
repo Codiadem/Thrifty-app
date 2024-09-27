@@ -12,7 +12,7 @@ function Home() {
     <>
       <Header />
       {/* container for home page */}
-      <div className="container">
+      <div className="container" id="home">
         <div className="hero-container">
           {/* container for text */}
           <div>
@@ -79,7 +79,7 @@ function Home() {
         </div>
       </section>
       {/* why choose us */}
-      <section className="why-choose-us">
+      <section className="why-choose-us" id="about">
         <div className="text-heading">
           <h1 className="why-choose-us-text">Why Choose Us</h1>
         </div>
