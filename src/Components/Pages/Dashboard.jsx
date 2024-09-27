@@ -4,12 +4,25 @@ import profileImage from "../../images/profile-img.png";
 import "../../style/dash1.css";
 import ExpenseTracker from "./Transaction";
 import ProfilePicture from "../Layout/ProfilePicture";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase";
 
 function Dashboard() {
   const [transactions, setTransactions] = useState(() => {
     const localData = localStorage.getItem("transactions");
     return localData ? JSON.parse(localData) : [];
   });
+
+  // set user name
+  const [userName, setUserName] = useState("");
+
+  // Fetch user's name from localStorage
+  useEffect(() => {
+    const storedName = localStorage.getItem("userName");
+    if (storedName) {
+      setUserName(storedName);
+    }
+  }, []);
 
   // State for balance, income, and expense
   const [balance, setBalance] = useState(0);
@@ -44,12 +57,13 @@ function Dashboard() {
       {/* <Header /> */}
       <div className="wrapper lg:mx-40 ">
         <div className="dash w-full flex flex-col md:flex-row pb-10 lg:f ">
-          <div className="image w-full flex items-center justify-center lg:justify end rounded-full">
+          <div className="image w-full flex items-center justify-center lg:justify end">
             <ProfilePicture />
           </div>
           <div className="user-info w-full flex flex-col items-center justify-center">
             <span className="user-name whitespace-nowrap">
               Chioma Ekpemerechi
+              {userName}
             </span>
             <p>
               Current Balance:{" "}
