@@ -14,31 +14,35 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const useNavigate = useState("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/Home");
-    } catch (error) {     
+      navigate("/dashboard");
+    } catch (error) {
       setError(error.message);
     }
   };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       console.log("User signed up: ", userCredential.user);
-      navigate("/Home"); 
+      navigate("/login");
     } catch (error) {
       console.error("Signup error: ", error);
-      setError(error.message); 
+      setError(error.message);
     }
   };
 
- 
-  
   const handleGoogleSignIn = async (e) => {
     const provider = new GoogleAuthProvider();
     try {
@@ -62,7 +66,10 @@ const LoginPage = () => {
           alt="Thrifty-logo"
           className="h-12 md:h-auto bg-[#371694]"
         />
-        <button className="md:hidden text-[#371694] text-3xl" onClick={toggleMenu}>
+        <button
+          className="md:hidden text-[#371694] text-3xl"
+          onClick={toggleMenu}
+        >
           &#9776; {/* Hamburger menu icon */}
         </button>
       </div>
@@ -84,6 +91,8 @@ const LoginPage = () => {
                 type="email"
                 placeholder="Email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full px-4 py-4 border border-none rounded-md shadow-sm focus:outline-none focus:ring-[#371694] focus:border-[#371694] bg-[#F5F4F8] "
               />
             </div>
@@ -96,6 +105,8 @@ const LoginPage = () => {
                 type="password"
                 placeholder="Password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 block w-full px-4 py-4 border border-none rounded-md shadow-sm focus:outline-none focus:ring-[#371694] focus:border-[#371694] bg-[#F5F4F8]"
               />
             </div>
@@ -107,9 +118,7 @@ const LoginPage = () => {
             </div>
             <div className="flex justify-center ">
               <button
-              onClick={
-                handleLogin()
-                }
+                onClick={handleLogin}
                 type="submit"
                 className="w-80  p-4 bg-[#A7A8FD] text-[#371694] text-2xl rounded-md hover:bg-blue-700 "
               >
@@ -123,13 +132,12 @@ const LoginPage = () => {
             <span className="border-t w-1/4"></span>
           </div>
           <button
-          onClick={
-            handleGoogleSignIn()
-          }
+            onClick={handleGoogleSignIn}
             type="submit"
-            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100 font-bold">
-            <img src={Google} alt="Google" className="w-9 h-9 mr-2" /> Sign Up
-            with Google
+            className="w-full mt-4 py-6 px-4 flex items-center justify-center border border-gray-800 border-bold rounded-md shadow-sm hover:bg-gray-100 font-bold"
+          >
+            <img src={Google} alt="Google" className="w-9 h-9 mr-2" />
+            Login with Google
           </button>
           <div className="mt-4 text-center">
             <span className="text-sm text-gray-500 text-[#9CA3AF]">
