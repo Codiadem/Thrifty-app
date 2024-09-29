@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/logo-blk-bg.png";
+import logo from "./../../../Public/logo-blk-bg.png";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Dropdown from "./DropDown";

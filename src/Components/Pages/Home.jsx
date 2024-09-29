@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Layout/Header";
-import Image from "../../../src/images/hero-img-web.png";
+import Image from "../../../Public/hero-img-web.png";
 import "./../../style/home.css";
 import { Link, NavLink } from "react-router-dom";
 import Testimonials from "../Layout/Testimonials";
@@ -28,7 +28,7 @@ function Home() {
           {/* container for image */}
           <div>
             <img
-              src="./../../src/images/hero-img-web.png"
+              src="./../../Public/hero-img-web.png"
               alt="hero-image"
               className="hero-image"
             />
@@ -50,28 +50,28 @@ function Home() {
         <div className="logos">
           <div>
             <img
-              src="./../../src/images/kuda.png"
+              src="./../../Public/kuda.png"
               alt="kudda-logo"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/moneyline.png"
+              src="./../../Public/moneyline.png"
               alt="money line with nanacy"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/leom.png"
+              src="./../../Public/leom.png"
               alt="leom technologies"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/tech4dev.png"
+              src="./../../Public/tech4dev.png"
               alt="tech4dev"
               className="recommended-company"
             />
@@ -85,7 +85,7 @@ function Home() {
         </div>
         <div className="why-choose-us-content">
           <img
-            src="./../../src/images/lady.png"
+            src="./../../Public/lady.png"
             alt="why choose us"
             className="why-choose-us-img"
           />
