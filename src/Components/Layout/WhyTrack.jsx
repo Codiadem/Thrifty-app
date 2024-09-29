@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from "./../../images/empty-wallet.avif";
+import Image from "./../../Public/empty-wallet.avif";
 import "./../../style/whytrack.css";
 import { NavLink, Link } from 'react-router-dom';
 function WhyTrack() {
@@ -10,7 +10,7 @@ function WhyTrack() {
                 <div className=''>
                     {/* scroll bar */}
                 </div>
-                <img src="./../../src/images/empty-wallet.avif" alt="" className='wallet rounded-tl-lg rounded-br-lg ' />
+                <img src="./../../src/Public/empty-wallet.avif" alt="" className='wallet rounded-tl-lg rounded-br-lg ' />
                 
             </div>
 

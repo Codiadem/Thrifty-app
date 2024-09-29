@@ -42,32 +42,32 @@ function Testimonials() {
 const data = [
     {
         name: `Keziah Ching`,
-        img: `/src/images/Keziah.jpg`,
+        img: `/src/Public/Keziah.jpg`,
         review: "Thrifty is a very user friendly app that has really helped in keeping track of my expenditures and im grateful for that",
     },
     {
         name: `Keziah Ching`,
-        img: `/src/images/Tawakalitu.jpg`,
+        img: `/src/Public/Tawakalitu.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/images/Keziah.jpg`,
+        img: `/src/Public/Keziah.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/images/Keziah.jpg`,
+        img: `/src/Public/Keziah.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/images/Keziah.jpg`,
+        img: `/src/Public/Keziah.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/images/Keziah.jpg`,
+        img: `/src/Public/Keziah.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     }
 ]
