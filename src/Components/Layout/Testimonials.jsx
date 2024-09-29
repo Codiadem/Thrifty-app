@@ -66,8 +66,8 @@ const data = [
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
-        name: `Keziah Ching`,
-        img: `/Public/Keziah.jpg`,
+        name: `Chioma Ekpemerechi`,
+        img: `/Public/profile-img.png`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     }
 ]
