@@ -42,32 +42,32 @@ function Testimonials() {
 const data = [
     {
         name: `Keziah Ching`,
-        img: `/src/Public/Keziah.jpg`,
+        img: `/Public/Keziah.jpg`,
         review: "Thrifty is a very user friendly app that has really helped in keeping track of my expenditures and im grateful for that",
     },
     {
-        name: `Keziah Ching`,
-        img: `/src/Public/Tawakalitu.jpg`,
+        name: `Tawakalitu`,
+        img: `/Public/Tawakalitu.jpg`,
+        review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
+    },
+    {
+        name: `Chioma Ekpemerechi`,
+        img: `/Public/profile-img.png`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/Public/Keziah.jpg`,
+        img: `/Public/Keziah.jpg`,
+        review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
+    },
+    {
+        name: `Tawakalitu`,
+        img: `/Public/Tawakalitu.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     },
     {
         name: `Keziah Ching`,
-        img: `/src/Public/Keziah.jpg`,
-        review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
-    },
-    {
-        name: `Keziah Ching`,
-        img: `/src/Public/Keziah.jpg`,
-        review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
-    },
-    {
-        name: `Keziah Ching`,
-        img: `/src/Public/Keziah.jpg`,
+        img: `/Public/Keziah.jpg`,
         review: `Thrifty is a very user friedndly app that has really helped in keeping track of my expenditures and im grateful for that`,
     }
 ]
