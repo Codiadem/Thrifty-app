@@ -11,7 +11,7 @@ function WhyTrack() {
                 <div className=''>
                     {/* scroll bar */}
                 </div>
-                <img src="./../../Public/empty-wallet.avif" alt="" className='wallet rounded-tl-lg rounded-br-lg ' />
+                <img src={Image} alt="" className='wallet rounded-tl-lg rounded-br-lg ' />
                 
             </div>
 
