@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/Thrifty-logo.png";
 import Google from "../../assets/Google.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import {
   signInWithEmailAndPassword,
@@ -45,11 +45,13 @@ const LoginPage = () => {
     <div className="flex flex-col md:flex-row h-screen">
       {/* Container covering half of the page for the logo and the hamburger menu on smaller screens*/}
       <div className="w-full md:w-1/2 bg-[#fff] md:bg-[#371694] flex items-center justify-between p-4 md:p-0 md:flex-col md:justify-center md:items-center">
-        <img
-          src={logo}
-          alt="Thrifty-logo"
-          className="h-12 md:h-auto bg-[#371694]"
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="Thrifty-logo"
+            className="h-12 md:h-auto bg-[#371694]"
+          />
+        </Link>
         <button
           className="md:hidden text-[#371694] text-3xl"
           onClick={toggleMenu}
