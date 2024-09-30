@@ -12,6 +12,7 @@ export default {
       secondaryBlue: "#5013FF",
       black: "#000",
       blue: "#1f0f3b",
+      purple: "#A7A8FD",
     },
 
     screens: {
