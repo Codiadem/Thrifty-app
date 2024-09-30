@@ -1,20 +1,20 @@
 import React from 'react'
 import Image from "./../../../Public/empty-wallet.avif";
-import "./../../style/whytrack.css";
+
 import { NavLink, Link } from 'react-router-dom';
 function WhyTrack() {
   return (
     <>
-        <div className='contain bg-white flex justify-around'>
+        <div className='mt-5 items-center h-full py-24 bg-white flex justify-around'>
             <div className='justify-around,'>
                 <div className=''>
                     {/* scroll bar */}
                 </div>
-                <img src={Image} alt="" className='wallet rounded-tl-lg rounded-br-lg ' />
+                <img src={Image} alt="" className='h-96 items center justify-center rounded-tl-lg rounded-br-lg ' />
                 
             </div>
 
-            <div className='whytrack'>
+            <div className='h-96 w-2/5 mt-3'>
                 <div className=''>
                     <h1 className='font-bold text-5xl text-primaryBlue'>Gain Control Over Your Expenditure</h1>
                     <p className='mt-8 text-black'>Never pay for an unwanted item or service again. 
