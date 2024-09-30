@@ -1,6 +1,11 @@
 import React from "react";
 import Header from "../Layout/Header";
 import Image from "../../../src/images/hero-img-web.png";
+import Lady from "../../images/lady.png";
+import Tech4dev from "../../images/tech4dev.png";
+import Leom from "../../images/leom.png";
+import Moneyline from "../../images/moneyline.png";
+import Kudda from "../../images/Kuda.png";
 import "./../../style/home.css";
 import { Link, NavLink } from "react-router-dom";
 import Testimonials from "../Layout/Testimonials";
@@ -28,7 +33,8 @@ function Home() {
           {/* container for image */}
           <div>
             <img
-              src="./../../src/images/hero-img-web.png"
+              // src="./../../src/images/hero-img-web.png"
+              src={Image}
               alt="hero-image"
               className="hero-image"
             />
@@ -37,9 +43,7 @@ function Home() {
         {/* get started button */}
         <section className="get-started">
           <button type="button" className="get-started-btn">
-            <a href="" className="get-started-link">
-              <NavLink to="/sign-up">Get Started</NavLink>
-            </a>
+            <NavLink to="/sign-up">Get Started</NavLink>
           </button>
         </section>
       </div>
@@ -50,28 +54,32 @@ function Home() {
         <div className="logos">
           <div>
             <img
-              src="./../../src/images/kuda.png"
+              // src="./../../src/images/kuda.png"
+              src={Kudda}
               alt="kudda-logo"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/moneyline.png"
+              // src="./../../src/images/moneyline.png"
+              src={Moneyline}
               alt="money line with nanacy"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/leom.png"
+              // src="./../../src/images/leom.png"
+              src={Leom}
               alt="leom technologies"
               className="recommended-company"
             />
           </div>
           <div>
             <img
-              src="./../../src/images/tech4dev.png"
+              // src="./../../src/images/tech4dev.png"
+              src={Tech4dev}
               alt="tech4dev"
               className="recommended-company"
             />
@@ -85,7 +93,8 @@ function Home() {
         </div>
         <div className="why-choose-us-content">
           <img
-            src="./../../src/images/lady.png"
+            // src="./../../src/images/lady.png"
+            src={Lady}
             alt="why choose us"
             className="why-choose-us-img"
           />
