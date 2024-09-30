@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
-import Header from "../Layout/Header";
-import profileImage from "../../images/profile-img.png";
+import logo from "../../images/logo-white-bg.png";
 import "../../style/dash1.css";
+import { Link, NavLink } from "react-router-dom";
 import ExpenseTracker from "./Transaction";
 import ProfilePicture from "../Layout/ProfilePicture";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 
 function Dashboard() {
+  // dashboard header
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // transaction codes
   const [transactions, setTransactions] = useState(() => {
     const localData = localStorage.getItem("transactions");
     return localData ? JSON.parse(localData) : [];
@@ -54,7 +61,42 @@ function Dashboard() {
 
   return (
     <>
-      {/* <Header /> */}
+      <div className="dash-header">
+        <NavLink to="/">
+          <img src={logo} alt="Thrifty Logo" />
+        </NavLink>
+
+        <div className="menu-button">
+          <nav className="navbar">
+            <div
+              className={`hamburger  ${isOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+            >
+              <div className={isOpen ? "line open" : "line"}></div>
+              <div className={isOpen ? "line open" : "line"}></div>
+              <div className={isOpen ? "line open" : "line"}></div>
+            </div>
+
+            <ul className={isOpen ? "nav-links open" : "nav-links"}>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/sign-up">Sign Up</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
       <div className="wrapper lg:mx-40 ">
         <div className="dash w-full flex flex-col md:flex-row pb-10 lg:f ">
           <div className="image w-full flex items-center justify-center lg:justify end">
